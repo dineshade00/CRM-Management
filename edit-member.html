@@ -740,6 +740,7 @@
               </div>
             </div>
             <!-- end page title -->
+
             <div class="container mt-0">
               <div class="card">
                 <div class="card-header">
@@ -950,18 +951,82 @@
                             required
                           >
                             <option value="">Select Membership Type</option>
-                            <option value="1 month plan">
-                              1 month plan - Rs. 500
-                            </option>
-                            <option value="3 month plan">
-                              3 month plan - Rs. 1300
-                            </option>
-                            <option value="6 month plan">
-                              6 month plan - Rs. 2000
-                            </option>
                           </select>
                           <div class="invalid-feedback">
                             Please select a membership type.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="paidAmount" class="form-label"
+                          >Paid Amount</label
+                        >
+                        <div>
+                          <input
+                            type="number"
+                            id="paidAmount"
+                            name="paidAmount"
+                            class="form-control"
+                            placeholder="Enter Paid Amount"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter the paid amount.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="dueAmount" class="form-label"
+                          >Due Amount</label
+                        >
+                        <div>
+                          <input
+                            type="number"
+                            id="dueAmount"
+                            name="dueAmount"
+                            class="form-control"
+                            placeholder="Enter Due Amount"
+                            readonly
+                          />
+                          <div class="invalid-feedback">
+                            Please enter the due amount.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="joiningDate" class="form-label"
+                          >Joining Date</label
+                        >
+                        <div>
+                          <input
+                            type="date"
+                            id="joiningDate"
+                            name="joiningDate"
+                            class="form-control"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Please select the joining date.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="expiryDate" class="form-label"
+                          >Expiry Date</label
+                        >
+                        <div>
+                          <input
+                            type="date"
+                            id="expiryDate"
+                            name="expiryDate"
+                            class="form-control"
+                            readonly
+                          />
+                          <div class="invalid-feedback">
+                            Please select the expiry date.
                           </div>
                         </div>
                       </div>
@@ -1398,6 +1463,8 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+       
+    <script src="assets/js/edit-member.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -1406,204 +1473,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const editMemberForm = document.getElementById("editMemberForm");
-        const memberIdToEditInput = document.getElementById("memberIdToEdit");
-        // Removed currentPhotoImg element as it's no longer displayed
-        const photoInput = document.getElementById("photo");
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        const errorModal = new bootstrap.Modal(
-          document.getElementById("errorModal")
-        );
-        const errorMessageText = document.getElementById("errorMessageText");
-
-        // Function to get query parameters from the URL
-        function getQueryParam(param) {
-          const urlParams = new URLSearchParams(window.location.search);
-          return urlParams.get(param);
-        }
-
-        // Get the member ID from the URL
-        const memberId = getQueryParam("id");
-
-        // --- Load Member Data on Page Load ---
-        if (memberId) {
-          const members = JSON.parse(localStorage.getItem("members")) || [];
-          // IMPORTANT: Parse memberId as an integer for comparison
-          const member = members.find((m) => m.id === parseInt(memberId));
-
-          if (member) {
-            // Pre-fill the form with member data
-            memberIdToEditInput.value = member.id;
-            document.getElementById("firstName").value = member.firstName || "";
-            document.getElementById("lastName").value = member.lastName || "";
-            document.getElementById("emailAddress").value =
-              member.emailAddress || "";
-            document.getElementById("contact").value = member.contact || "";
-            document.getElementById("gender").value = member.gender || "";
-            document.getElementById("dob").value = member.dob || "";
-            document.getElementById("address").value = member.address || "";
-            document.getElementById("city").value = member.city || "";
-            document.getElementById("pincode").value = member.pincode || "";
-            document.getElementById("membership_type").value =
-              member.membership_type || "";
-
-            // The logic for displaying currentPhotoImg is removed as it's no longer needed.
-            // The photoUrl will still be loaded into localStorage if a photo was previously set.
-          } else {
-            // If member ID is in URL but member not found in localStorage
-            errorMessageText.textContent = "Member not found!";
-            errorModal.show();
-            errorModal._element.addEventListener(
-              "hidden.bs.modal",
-              function () {
-                window.location.href = "show-all-member.html"; // Redirect to show-all-member
-              },
-              { once: true }
-            );
-          }
-        } else {
-          // If no member ID is provided in the URL at all
-          errorMessageText.textContent =
-            "No member ID provided for editing. Redirecting...";
-          errorModal.show();
-          errorModal._element.addEventListener(
-            "hidden.bs.modal",
-            function () {
-              window.location.href = "show-all-member.html"; // Redirect to show-all-member
-            },
-            { once: true }
-          );
-        }
-
-        // --- Form Submission Handling ---
-        editMemberForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          event.stopPropagation(); // Stop event propagation for Bootstrap validation
-
-          let formIsValid = true;
-          const updatedMemberData = {};
-
-          // Manual validation for required fields
-          editMemberForm.querySelectorAll("[required]").forEach((field) => {
-            if (
-              field.value.trim() === "" ||
-              (field.tagName === "SELECT" && field.value === "")
-            ) {
-              field.classList.add("is-invalid");
-              formIsValid = false;
-            } else {
-              field.classList.remove("is-invalid");
-              updatedMemberData[field.id] = field.value.trim();
-            }
-          });
-
-          // Validate specific patterns (contact and pincode)
-          const contactField = document.getElementById("contact");
-          if (
-            !contactField.checkValidity() ||
-            contactField.value.length !== 10
-          ) {
-            contactField.classList.add("is-invalid");
-            formIsValid = false;
-          } else {
-            contactField.classList.remove("is-invalid");
-          }
-
-          const pincodeField = document.getElementById("pincode");
-          if (!pincodeField.checkValidity()) {
-            pincodeField.classList.add("is-invalid");
-            formIsValid = false;
-          } else {
-            pincodeField.classList.remove("is-invalid");
-          }
-
-          // Handle photo upload and format validation
-          if (photoInput.files.length > 0) {
-            const file = photoInput.files[0];
-            const fileType = file.type;
-            const validImageTypes = ["image/jpeg", "image/png"];
-
-            if (validImageTypes.includes(fileType)) {
-              const reader = new FileReader();
-              reader.onload = function (e) {
-                updatedMemberData.photoUrl = e.target.result;
-                saveMemberData(updatedMemberData, formIsValid);
-              };
-              reader.readAsDataURL(file);
-              photoInput.classList.remove("is-invalid");
-            } else {
-              photoInput.classList.add("is-invalid");
-              photoInput.nextElementSibling.textContent =
-                "Please upload a photo (only .jpg, .jpeg, .png formats allowed).";
-              formIsValid = false;
-              // Even if form is invalid due to photo, proceed to saveMemberData
-              // so the error modal can be displayed.
-              saveMemberData(updatedMemberData, formIsValid);
-            }
-          } else {
-            // If no new photo is selected, we need to ensure the existing photo URL (if any)
-            // is preserved from the member data when it was loaded.
-            // We need to retrieve the original member's photoUrl for this case.
-            const members = JSON.parse(localStorage.getItem("members")) || [];
-            const memberIdToUpdate = parseInt(memberIdToEditInput.value);
-            const member = members.find((m) => m.id === memberIdToUpdate);
-
-            updatedMemberData.photoUrl =
-              member && member.photoUrl
-                ? member.photoUrl
-                : "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-            saveMemberData(updatedMemberData, formIsValid);
-          }
-        });
-
-        function saveMemberData(updatedMemberData, formIsValid) {
-          if (formIsValid) {
-            let members = JSON.parse(localStorage.getItem("members")) || [];
-            const memberIdToUpdate = parseInt(memberIdToEditInput.value);
-
-            const memberIndex = members.findIndex(
-              (m) => m.id === memberIdToUpdate
-            );
-
-            if (memberIndex !== -1) {
-              // Update the existing member
-              members[memberIndex] = {
-                ...members[memberIndex], // Keep existing properties not explicitly updated
-                firstName: updatedMemberData.firstName,
-                lastName: updatedMemberData.lastName,
-                contact: updatedMemberData.contact,
-                emailAddress: updatedMemberData.emailAddress,
-                gender: updatedMemberData.gender,
-                dob: updatedMemberData.dob,
-                address: updatedMemberData.address,
-                city: updatedMemberData.city,
-                pincode: updatedMemberData.pincode,
-                photoUrl: updatedMemberData.photoUrl,
-                membership_type: updatedMemberData.membership_type,
-                status: "Active", // Or set to active upon update
-              };
-
-              localStorage.setItem("members", JSON.stringify(members));
-              successModal.show();
-              // No redirection here. User stays on the edit page.
-            } else {
-              errorMessageText.textContent =
-                "Error: Member not found for update.";
-              errorModal.show();
-            }
-          } else {
-            errorMessageText.textContent =
-              errorMessageText.textContent === "" // If no specific error message set, use general
-                ? "Please fill in all required fields correctly."
-                : errorMessageText.textContent;
-            errorModal.show();
-          }
-        }
-      });
-    </script>
+  
   </body>
 </html>
