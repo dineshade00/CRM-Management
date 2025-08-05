@@ -1,4 +1,4 @@
-
+    
       $(document).ready(function () {
         var table = $("#datatable-col-visiblility").DataTable();
 
@@ -14,6 +14,16 @@
           table.clear();
 
           members.forEach((member) => {
+            // Check expiry status
+            const today = new Date().toISOString().split("T")[0];
+            const expiry = member.expiry_date || member.expiryDate || "";
+
+            if (expiry && expiry < today) {
+              member.status = "Expired";
+            } else {
+              member.status = "Active";
+            }
+
             const photoSrc =
               member.photoUrl ||
               "https://via.placeholder.com/40/CCCCCC/888888?text=No+Photo";
@@ -323,3 +333,4 @@
         $(".row:has(#datatable-col-visiblility)").show();
         $("html, body").animate({ scrollTop: 0 }, 300);
       });
+    
