@@ -60,27 +60,28 @@
 
 
         <!-- Start topbar -->
-         <header id="page-topbar">
+        <header id="page-topbar">
             <div class="navbar-header">
+
                 <!-- Logo -->
 
                 <!-- Start Navbar-Brand -->
                 <div class="navbar-logo-box">
                     <a href="index.html" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20" />
+                            <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="logo-dark" height="18" />
+                            <img src="assets/images/logo-dark.png" alt="logo-dark" height="18">
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20" />
+                            <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="logo-light" height="18" />
+                            <img src="assets/images/logo-light.png" alt="logo-light" height="18">
                         </span>
                     </a>
 
@@ -100,22 +101,62 @@
                                 <i class="mdi mdi-chevron-down align-middle"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
+
                                 <!-- Inventory Manager -->
-                                <a href="equipment.html" class="dropdown-item">
-                                    <div class="dropdown-icon">
-                                        <i class="fas fa-dumbbell"></i>
-                                    </div>
-                                    <span class="dropdown-content">Equipments</span>
-                                    <div class="dropdown-addon">
-                                        <span class="badge badge-warning rounded-pill">20</span>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
+                                    <span class="dropdown-content">Equipment Manager</span>
+                                    <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
                                     </div>
                                 </a>
 
-                                <!-- Invoice -->
-                                <a href="create-invoice.html" class="dropdown-item">
-                                    <div class="dropdown-icon">
-                                        <i class="fas fa-file-invoice"></i>
+                                <!-- Project Manager as Workout Programs -->
+                                <div class="dropdown-submenu">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="dropdown-icon"><i class="fas fa-running"></i></div>
+                                        <span class="dropdown-content">Workout Programs</span>
+                                        <div class="dropdown-addon"><i class="mdi mdi-chevron-right align-middle"></i>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-submenu-menu dropdown-submenu-end">
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Create Program</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Delete Program</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Active Programs</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Completed Programs</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">High Priority</span></a>
                                     </div>
+                                </div>
+
+                                <!-- Task Manager as Trainer Schedules -->
+                                <div class="dropdown-submenu">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="dropdown-icon"><i class="fas fa-user-clock"></i></div>
+                                        <span class="dropdown-content">Trainer Schedules</span>
+                                        <div class="dropdown-addon"><i class="mdi mdi-chevron-right align-middle"></i>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-submenu-menu dropdown-submenu-end">
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">View Schedule</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Assign Schedule</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Assign Trainer</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Completed Sessions</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Urgent Sessions</span></a>
+                                    </div>
+                                </div>
+
+                                <!-- Invoice -->
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
                                     <span class="dropdown-content">Membership Invoice</span>
                                 </a>
 
@@ -124,9 +165,7 @@
 
                                 <!-- My Account -->
                                 <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon">
-                                        <i class="fas fa-user-circle"></i>
-                                    </div>
+                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
                                     <span class="dropdown-content">My Profile</span>
                                 </a>
                             </div>
@@ -141,18 +180,19 @@
                             <div
                                 class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
                                 <div class="dropdown-row justify-content-center">
+
                                     <!-- Original Image (Unchanged) -->
                                     <div class="p-2 menu-image">
                                         <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
-                                            style="height: 200px" />
+                                            style="height: 200px;">
                                     </div>
 
                                     <!-- Gym Welcome Section -->
                                     <div class="dropdown-col">
-                                        <h2 class="">Welcome to Clivax Gym!</h2>
+                                        <h2 class="">Welcome to FitPro Gym!</h2>
                                         <p class="text-muted mb-0">
-                                            Track members, manage plans, monitor trainers, and
-                                            streamline gym operations with our digital gym
+                                            Track members, manage plans, monitor trainers, and streamline gym operations
+                                            with our digital gym
                                             dashboard.
                                         </p>
                                         <div class="mt-3">
@@ -165,42 +205,30 @@
                                         <h4 class="dropdown-header">Gym Features</h4>
                                         <div class="grid-nav grid-nav-action">
                                             <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-chart-line"></i>
-                                                    </div>
+                                                <a href="dashboard.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
                                                     <span class="grid-nav-content">Dashboard</span>
                                                 </a>
-                                                <a href="show-all-member.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-user-friends"></i>
-                                                    </div>
+                                                <a href="members.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
                                                     <span class="grid-nav-content">Members</span>
                                                 </a>
                                                 <a href="renewals.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-redo-alt"></i>
-                                                    </div>
+                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
                                                     <span class="grid-nav-content">Renewals</span>
                                                 </a>
                                             </div>
                                             <div class="grid-nav-row">
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-dumbbell"></i>
-                                                    </div>
+                                                <a href="trainers.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
                                                     <span class="grid-nav-content">Trainers</span>
                                                 </a>
-                                                <a href="view-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-id-card-alt"></i>
-                                                    </div>
+                                                <a href="plans.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
                                                     <span class="grid-nav-content">Membership Plans</span>
                                                 </a>
-                                                <a href="revenue-report.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-file-alt"></i>
-                                                    </div>
+                                                <a href="reports.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
                                                     <span class="grid-nav-content">Reports</span>
                                                 </a>
                                             </div>
@@ -215,13 +243,21 @@
                                                 class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
                                             <span class="dropdown-content">Attendance</span>
                                         </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
+                                        <a href="diet-plans.html" class="dropdown-item">
                                             <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
                                             <span class="dropdown-content">Diet Plans</span>
                                         </a>
-                                        <a href="manage-staff.html" class="dropdown-item">
+                                        <a href="workout-videos.html" class="dropdown-item">
+                                            <i class="mdi mdi-video-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Workout Videos</span>
+                                        </a>
+                                        <a href="staff.html" class="dropdown-item">
                                             <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
                                             <span class="dropdown-content">Staff Management</span>
+                                        </a>
+                                        <a href="notifications.html" class="dropdown-item">
+                                            <i class="mdi mdi-bell-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Notifications</span>
                                         </a>
                                     </div>
                                 </div>
@@ -230,29 +266,37 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-2">
+                        <!--Start App Search-->
+                        <form class="app-search d-none d-lg-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="fab fa-sistrix fs-17 align-middle"></span>
+                            </div>
+                        </form>
+                        <!--End App Search-->
+
                         <!-- Start Notification -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-sm top-icon" id="page-header-notifications-dropdown"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-bell align-middle"></i>
-                                <span class="btn-marker"><i class="marker marker-dot text-danger"></i></span>
+                                <span class="btn-marker"><i class="marker marker-dot text-danger"></i><span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
                                 <div class="p-3 bg-info">
                                     <div class="row align-items-center">
                                         <div class="col">
-                                            <h6 class="text-white m-0">
-                                                <i class="far fa-bell me-2"></i> Notifications
+                                            <h6 class="text-white m-0"><i class="far fa-bell me-2"></i> Notifications
                                             </h6>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="#!" class="badge bg-info-subtle text-info">
-                                                6+</a>
+                                            <a href="#!" class="badge bg-info-subtle text-info"> 6+</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div data-simplebar style="max-height: 230px">
+                                <div data-simplebar style="max-height: 230px;">
+
                                     <a href="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-xs avatar-label-success me-3">
@@ -263,9 +307,7 @@
                                             <div class="flex-1">
                                                 <h6 class="mb-1">New member registered</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 5 min ago
-                                                    </p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 5 min ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
@@ -282,9 +324,7 @@
                                             <div class="flex-1">
                                                 <h6 class="mb-1">Session missed by trainer</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 30 min ago
-                                                    </p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 30 min ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
@@ -301,8 +341,7 @@
                                             <div class="flex-1">
                                                 <h6 class="mb-1">Payment due for member ID #1023</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 hours ago
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 hours ago
                                                     </p>
                                                 </div>
                                             </div>
@@ -318,12 +357,9 @@
                                                 </span>
                                             </div>
                                             <div class="flex-1">
-                                                <h6 class="mb-1">
-                                                    Today’s session starts in 30 minutes
-                                                </h6>
+                                                <h6 class="mb-1">Today’s session starts in 30 minutes</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 3 hours ago
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 hours ago
                                                     </p>
                                                 </div>
                                             </div>
@@ -341,9 +377,7 @@
                                             <div class="flex-1">
                                                 <h6 class="mb-1">Member plan updated (ID #1008)</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> Yesterday
-                                                    </p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> Yesterday</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
@@ -360,9 +394,7 @@
                                             <div class="flex-1">
                                                 <h6 class="mb-1">Admin password changed</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 days ago
-                                                    </p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 days ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
@@ -373,8 +405,7 @@
                                     <div class="d-grid">
                                         <a class="btn btn-sm btn-link font-size-14 text-center"
                                             href="javascript:void(0)">
-                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View
-                                            More..
+                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
                                         </a>
                                     </div>
                                 </div>
@@ -382,12 +413,20 @@
                         </div>
                         <!-- End Notification -->
 
+                        <!-- Start Activities -->
+                        <div class="d-inline-block activities">
+                            <button type="button" class="btn btn-sm top-icon" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvas-rightsidabar">
+                                <i class="fas fa-table align-middle"></i>
+                            </button>
+                        </div>
+                        <!-- End Activities -->
                         <!-- Start Profile -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-sm top-icon p-0" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded avatar-2xs p-0" src="assets/images/users/avatar-6.png"
-                                    alt="Header Avatar" />
+                                    alt="Header Avatar">
                             </button>
                             <div
                                 class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0">
@@ -396,9 +435,7 @@
                                         <div class="rich-list-item w-100 p-0">
                                             <div class="rich-list-prepend">
                                                 <div class="avatar avatar-label-light avatar-circle">
-                                                    <div class="avatar-display">
-                                                        <i class="fas fa-user-circle"></i>
-                                                    </div>
+                                                    <div class="avatar-display"><i class="fas fa-user-circle"></i></div>
                                                 </div>
                                             </div>
                                             <div class="rich-list-content">
@@ -414,43 +451,32 @@
                                     <div class="card-body p-0">
                                         <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
                                             <div class="grid-nav-row">
-                                                <a href="apps-contact.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-user-edit"></i>
-                                                    </div>
+                                                <a href="profile.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-user-edit"></i></div>
                                                     <span class="grid-nav-content">My Profile</span>
                                                 </a>
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-dumbbell"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Trainer Profile</span>
+                                                <a href="trainer-chats.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
+                                                    <span class="grid-nav-content">Trainer Chats</span>
                                                 </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-running"></i>
-                                                    </div>
+                                                <a href="workout-logs.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-running"></i></div>
                                                     <span class="grid-nav-content">Workout Logs</span>
                                                 </a>
                                             </div>
 
                                             <div class="grid-nav-row">
-                                                <a href="live-session.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-calendar-check"></i>
+                                                <a href="session-calendar.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="far fa-calendar-check"></i>
                                                     </div>
                                                     <span class="grid-nav-content">Session Calendar</span>
                                                 </a>
-                                                <a href="diet-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-apple-alt"></i>
-                                                    </div>
+                                                <a href="diet-notes.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-apple-alt"></i></div>
                                                     <span class="grid-nav-content">Diet Notes</span>
                                                 </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-bell"></i>
-                                                    </div>
+                                                <a href="notifications.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="far fa-bell"></i></div>
                                                     <span class="grid-nav-content">Notifications</span>
                                                 </a>
                                             </div>
@@ -464,11 +490,13 @@
                             </div>
                         </div>
                         <!-- End Profile -->
+
                     </div>
                 </div>
                 <!-- End menu -->
             </div>
-        </header>        <!-- End topbar -->
+        </header>
+        <!-- End topbar -->
 
 
         <!-- ========== Left Sidebar Start ========== -->
@@ -1277,7 +1305,18 @@ window.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<!-- b -->
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function () {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#renewalTable tbody tr");
+
+    rows.forEach(row => {
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
+});
+</script>
+
 
 </body>
 
